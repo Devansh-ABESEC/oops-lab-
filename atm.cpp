@@ -1,90 +1,56 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class ATM
 {
-private:
-    double balance;
-    int pin
-
 public:
-    ATM()
-    {
-        balance = 1000;
-    }
+    int balance = 1000;
+
     void checkBalance()
     {
-        cout << "Current Balance: £" << balance << endl;
+        cout << "Balance = " << balance << endl;
     }
 
-    // Deposit money
     void deposit()
     {
-        double amount;
-        cout << "Enter amount to deposit: £";
+        int amount;
+        cout << "Enter amount: ";
         cin >> amount;
-
-        balance += amount;
-        cout << "Amount deposited successfully!" << endl;
+        balance = balance + amount;
     }
 
-    // Withdraw money
     void withdraw()
     {
-        double amount;
-        cout << "Enter amount to withdraw: £";
+        int amount;
+        cout << "Enter amount: ";
         cin >> amount;
 
         if (amount <= balance)
-        {
-            balance -= amount;
-            cout << "Please collect your cash." << endl;
-        }
+            balance = balance - amount;
         else
-        {
-            cout << "Insufficient balance!" << endl;
-        }
+            cout << "Insufficient balance" << endl;
     }
 };
 
 int main()
 {
-    ATM account;
+    ATM a;
     int choice;
 
-    do
-    {
-        cout << "\n===== ATM MENU =====" << endl;
-        cout << "1. Check Balance" << endl;
-        cout << "2. Deposit Money" << endl;
-        cout << "3. Withdraw Money" << endl;
-        cout << "4. Exit" << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
+    cout << "1. Check Balance" << endl;
+    cout << "2. Deposit" << endl;
+    cout << "3. Withdraw" << endl;
+    cout << "Enter choice: ";
+    cin >> choice;
 
-        switch (choice)
-        {
-        case 1:
-            account.checkBalance();
-            break;
-
-        case 2:
-            account.deposit();
-            break;
-
-        case 3:
-            account.withdraw();
-            break;
-
-        case 4:
-            cout << "Thank you for using ATM!" << endl;
-            break;
-
-        default:
-            cout << "Invalid choice!" << endl;
-        }
-
-    } while (choice != 4);
+    if (choice == 1)
+        a.checkBalance();
+    else if (choice == 2)
+        a.deposit();
+    else if (choice == 3)
+        a.withdraw();
+    else
+        cout << "Invalid choice";
 
     return 0;
 }
