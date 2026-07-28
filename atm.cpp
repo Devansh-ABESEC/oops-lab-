@@ -5,6 +5,7 @@ class ATM
 {
 private:
     double balance;
+    int pin
 
 public:
     ATM()
