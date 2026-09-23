@@ -1,3 +1,11 @@
+// algo 
+// 1.start
+// 2.create unique_ptr 
+// 3.access object
+// 4.create shared_ptr
+// 5.shared ownership
+// 6. display use_count
+// 7. stop
 #include<bits/stdc++.h>
 #include <memory>
 using namespace std;
